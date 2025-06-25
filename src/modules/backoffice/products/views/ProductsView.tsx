@@ -85,7 +85,7 @@ export default function ProductsView() {
   };
 
   const navigateToNewProduct = () => {
-    if (user?.roleName === 'Administrador') {
+    if (user?.roleName === 'Administrador' || user?.roleName === 'Colaborador') {
       navigate('/backoffice/products/new');
     } else {
       console.error('No tienes permisos para añadir productos');

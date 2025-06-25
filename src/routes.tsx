@@ -44,7 +44,7 @@ export function AppRoutes() {
         {
           path: 'products/new',
           element: (
-            <ProtectedRoute roles={['Administrador']}>
+            <ProtectedRoute roles={['Administrador', 'Colaborador']}>
               <ProductCreateView />
             </ProtectedRoute>
           ),
