@@ -6,6 +6,7 @@ import { LoadingOverlay } from '../../../../shared/components/LoadingOverlay/Loa
 import { useAuth } from '../../../../core/auth/useAuth'
 import type { LoginRequest } from '../types'
 import { PrimaryButton } from '../../../../shared/components/buttons/PrimaryButton/PrimaryButton'
+import { SecondaryButton } from '../../../../shared/components/buttons/SecondaryButton/SecondaryButton'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -47,6 +48,10 @@ export default function Login() {
     [form, login, navigate]
   )
 
+  const navigateToRegister = () => {
+    navigate('/register')
+  }
+
   return (
     <>
       <div className="min-h-screen flex">
@@ -74,6 +79,14 @@ export default function Login() {
               <PrimaryButton type="submit" disabled={loading} className="w-full">
                 {loading ? 'Cargando...' : 'Entrar'}
               </PrimaryButton>
+
+              {/* Don't have an account? create it */}
+              <div className='mt-4'>
+                <SecondaryButton type="button" onClick={navigateToRegister} disabled={loading} className="w-full">
+                  Crea tu cuenta
+                </SecondaryButton>
+              </div>
+
             </div>
           </form>
 

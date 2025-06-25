@@ -106,21 +106,12 @@ export default function ProductsView() {
     <Box sx={{ ml: '240px', mt: '64px', p: 3 }}>
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
         <Typography variant="h4">Productos</Typography>
-        {user?.roleName === 'Administrador' ? (
-          <PrimaryButton
-            startIcon={<AddIcon />}
-            onClick={navigateToNewProduct}
-          >
-            Añadir Producto
-          </PrimaryButton>
-        ) : (
-          <SecondaryButton
-            startIcon={<AddIcon />}
-            disabled
-          >
-            Añadir Producto
-          </SecondaryButton>
-        )}
+        <PrimaryButton
+          startIcon={<AddIcon />}
+          onClick={navigateToNewProduct}
+        >
+          Añadir Producto
+        </PrimaryButton>
       </Box>
 
       <Table>
