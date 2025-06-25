@@ -1,0 +1,181 @@
+/* Variables */
+$primary: #101e8d;
+$light-gray: #f5f5f5;
+$white: #ffffff;
+$text-dark: #000000;
+$border-gray: #e0e0e0;
+
+/* Contenedor raíz */
+.footerRoot {
+  background: $light-gray;
+  color: $text-dark;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+}
+
+/* Top Bar */
+.topBar {
+  display: flex;
+  justify-content: center;
+  background: $primary;
+  color: $white;
+  padding: 0.5rem 1rem;
+}
+
+.topItem {
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.topLink {
+  color: $white;
+  margin-left: 0.5rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Main Section (columnas) */
+.mainSection {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 1rem;
+  background: $white;
+}
+
+.column {
+  flex: 1 1 15rem;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: $text-dark;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* Para la sección Empresa B */
+  &.column:nth-child(5) {
+    .bCertified {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        margin-right: 0.5rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+      }
+    }
+
+    .bDescription {
+      margin-top: 0.5rem;
+
+      p {
+        margin: 0.5rem 0 0;
+        line-height: 1.4;
+
+        .conoceLink {
+          display: inline-block;
+          margin-top: 0.25rem;
+          color: $primary;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Suscripción */
+.columnSubscribe {
+  flex: 1 1 20rem;
+
+  .subscribeForm {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+
+  .subscribeInput {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid $border-gray;
+    border-radius: 9999px;
+  }
+
+  .subscribeButton {
+    margin-left: 0.5rem;
+    background: $primary;
+    color: $white;
+    text-transform: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Imagen de opiniones certificadas */
+.opinionesImg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid $border-gray;
+}
+
+.bottomLinks {
+  a {
+    color: $text-dark;
+    margin-right: 1.5rem;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.socialIcons {
+  display: flex;
+
+  a {
+    display: inline-block;
+    margin-left: 0.75rem;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
