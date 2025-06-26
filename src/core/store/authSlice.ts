@@ -2,14 +2,30 @@ import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/tool
 import type { LoginRequest, LoginResponse } from '../../modules/public/auth/types';
 import api from '../api/axios';
 import type { RootState } from './store';
+import { LOGIN_USER_ENDPOINT } from '../../services/apiPaths';
 
-// Async thunk for login
-export const loginAsync = createAsyncThunk(
-  'auth/login',
-  async (credentials: LoginRequest) => {
-    const response = await api.post<LoginResponse>('/auth/login', credentials);
-    localStorage.setItem('token', response.data.accessToken);
-    return response.data;
+export const loginAsync = createAsyncThunk<
+  LoginResponse,
+  LoginRequest,
+  { rejectValue: string }
+>(
+  LOGIN_USER_ENDPOINT,
+  async (credentials, thunkAPI) => {
+    try {
+      const response = await api.post<LoginResponse>('/auth/login', credentials);
+      localStorage.setItem('token', response.data.accessToken);
+      return response.data;
+    } catch (err: any) {
+      const nestedMsg = err.response
+        ?.data
+        ?.error
+        ?.message
+        ?.message;
+      const message = typeof nestedMsg === 'string'
+        ? nestedMsg
+        : 'Error al loguearte';
+      return thunkAPI.rejectWithValue(message);
+    }
   }
 );
 

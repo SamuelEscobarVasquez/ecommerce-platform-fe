@@ -41,7 +41,7 @@ export default function Login() {
         setSnackbar({ open: true, severity: 'success', message: '¡Login exitoso!' })
         setTimeout(() => navigate('/backoffice/products'), 1000)
       } catch (err: any) {
-        const message = err.response?.data?.error?.message || err.message || 'Error al registrar';
+        const message = err ?? 'Error al loguearte';
         setSnackbar({ open: true, severity: 'error', message: message })
       }
     },
