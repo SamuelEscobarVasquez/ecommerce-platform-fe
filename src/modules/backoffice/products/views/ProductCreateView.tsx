@@ -76,9 +76,9 @@ export default function ProductCreateView() {
   );
 
   return (
-    <Box sx={{ ml: '240px', mt: '64px', p: 4 }}>
+    <Box sx={{ mt: '64px', p: 4 }}>
       <Typography variant="h4" mb={2}>Crear Producto</Typography>
-      <Paper sx={{ p: 3, maxWidth: 600 }}>
+      <Paper sx={{ p: 3 }}>
         <form onSubmit={handleSubmit}>
           <TextInput
             label="Nombre"
@@ -127,9 +127,11 @@ export default function ProductCreateView() {
             {form.image && <Typography mt={1}>{form.image.name}</Typography>}
           </Box>
 
-          <PrimaryButton type="submit" disabled={loading}>
-            {loading ? 'Creando...' : 'Crear Producto'}
-          </PrimaryButton>
+          <div className="flex justify-center">
+            <PrimaryButton type="submit" disabled={loading}>
+              {loading ? 'Creando...' : 'Crear Producto'}
+            </PrimaryButton>
+          </div>
         </form>
       </Paper>
 

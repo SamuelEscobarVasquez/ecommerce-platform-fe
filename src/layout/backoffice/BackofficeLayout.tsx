@@ -8,7 +8,7 @@ export function BackofficeLayout() {
       <SidebarBackoffice />
       <div style={{ flex: 1 }}>
         <HeaderBackoffice />
-        <main style={{ marginTop: 64 }}><Outlet/></main>
+        <main><Outlet/></main>
       </div>
     </div>
   );

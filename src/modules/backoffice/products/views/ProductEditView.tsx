@@ -85,9 +85,9 @@ export default function ProductEditView() {
   }, [form, productId, navigate]);
 
   return (
-    <Box sx={{ ml: '240px', mt: '64px', p: 4 }}>
+    <Box sx={{ mt: '64px', p: 4 }}>
       <Typography variant="h4" mb={2}>Editar Producto</Typography>
-      <Paper sx={{ p: 3, maxWidth: 600 }}>
+      <Paper sx={{ p: 3 }}>
         <form onSubmit={handleSubmit}>
           <TextInput
             label="Nombre"
@@ -133,9 +133,11 @@ export default function ProductEditView() {
             </PrimaryButton>
             {form.image && <Typography mt={1}>{form.image.name}</Typography>}
           </Box>
-          <PrimaryButton type="submit" disabled={loading}>
-            {loading ? 'Guardando...' : 'Guardar cambios'}
-          </PrimaryButton>
+          <div className="flex justify-center">
+            <PrimaryButton type="submit" disabled={loading}>
+              {loading ? 'Guardando...' : 'Guardar cambios'}
+            </PrimaryButton>
+          </div>
         </form>
       </Paper>
       <LoadingOverlay isLoading={loading} />

@@ -1,8 +1,8 @@
 import { Navigate, useRoutes } from 'react-router-dom';
 import { PublicLayout } from './layout/public/PublicLayout';
 import { ProtectedRoute } from './core/auth/ProtectedRoute';
-import { BackofficeLayout } from './modules/backoffice/BackofficeLayout';
 import { lazy, Suspense } from 'react';
+import { BackofficeLayout } from './layout/backoffice/BackofficeLayout';
 
 const Login = lazy(() => import('./modules/public/auth/views/Login'));
 const Register = lazy(() => import('./modules/public/auth/views/Register'));

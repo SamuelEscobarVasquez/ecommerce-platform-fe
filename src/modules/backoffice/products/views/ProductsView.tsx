@@ -103,7 +103,7 @@ export default function ProductsView() {
   }
 
   return (
-    <Box sx={{ ml: '240px', mt: '64px', p: 3 }}>
+    <Box sx={{ mt: '64px', p: 3 }}>
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
         <Typography variant="h4">Productos</Typography>
         <PrimaryButton
