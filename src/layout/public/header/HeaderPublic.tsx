@@ -10,6 +10,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styles from './HeaderPublic.module.scss';
 import ElevationScroll from './ElevationScroll';
 import { useNavigate } from 'react-router-dom';
+import { PrimaryButton } from '../../../shared/components/buttons/PrimaryButton/PrimaryButton';
 
 export function HeaderPublic() {
   const navigate = useNavigate();
@@ -73,7 +74,7 @@ export function HeaderPublic() {
               </Link>
             </Box>
             <Box className={styles.icons}>
-              <IconButton onClick={navigateToLogin} color="inherit"><PersonIcon /></IconButton>
+              <PrimaryButton startIcon={<PersonIcon />} type="submit" onClick={navigateToLogin}>Login</PrimaryButton>
               <IconButton onClick={navigateToLogin} color="inherit"><ShoppingCartIcon /></IconButton>
             </Box>
           </Box>
@@ -81,6 +82,7 @@ export function HeaderPublic() {
 
         {/* Subnavegación */}
         <Box component="nav" role="navigation" className={styles.subNav}>
+          <Link onClick={navigateToProducts} className={styles.subNavLink}>Productos</Link>
           <Link onClick={navigateToProducts} className={styles.subNavLink}>Departamentos ▾</Link>
           <Link onClick={navigateToProducts} className={styles.subNavLink}>Bodas y registros</Link>
           <Link onClick={navigateToProducts} className={styles.subNavLink}>Revistas</Link>
